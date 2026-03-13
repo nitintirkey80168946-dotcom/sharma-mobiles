@@ -194,8 +194,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition whatsapp-btn"
               >
                 Check Offers
               </a>
@@ -248,8 +248,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition whatsapp-btn"
               >
                 Check Offers
               </a>
@@ -302,8 +302,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-gray-900 transition whatsapp-btn"
               >
                 Check Offers
               </a>
@@ -377,8 +377,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition whatsapp-btn"
               >
                 Buy with EMI
               </a>
@@ -431,8 +431,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition whatsapp-btn"
               >
                 Buy with EMI
               </a>
@@ -485,8 +485,8 @@
               </p>
 
               <a
-                href="order.html"
-                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition"
+                href=""
+                class="block py-3 bg-black text-white rounded-xl font-semibold hover:bg-red-600 transition whatsapp-btn"
               >
                 Buy with EMI
               </a>
@@ -576,6 +576,22 @@
           track.scrollBy({ left: scrollWidth * direction, behavior: "smooth" });
         }
       }
+    </script>
+    <script>
+      document.querySelectorAll(".whatsapp-btn").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const card = this.closest(".product-card");
+          const productName = card
+            ? card.querySelector("h3").innerText
+            : "a mobile phone";
+          const phoneNumber = "918348554018";
+          const message = encodeURIComponent(
+            `Hello Sharma Mobiles! I'm interested in the ${productName}. Is it available at your store?`,
+          );
+          window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        });
+      });
     </script>
   </body>
 </html>
