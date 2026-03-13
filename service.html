@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repairs & Accessories | Sharma Mobiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; scroll-behavior: smooth; }
+        
+        .gemini-text {
+            background: linear-gradient(90deg, #4285F4 0%, #9b72cb 50%, #d96570 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gemini-gradient { background: linear-gradient(135deg, #444746 0%, #1e1e1e 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        
+        /* Slider Functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .snap-inline { scroll-snap-type: x mandatory; }
+        .snap-item { scroll-snap-align: start; flex-shrink: 0; }
+
+        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        
+        .nav-btn {
+            background: white;
+            padding: 12px;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover { transform: scale(1.1); background: #fff; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: 200%;
+            animation: scroll 25s linear infinite;
+        }
+        .animate-scroll:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 glass-card py-4 px-8 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase gemini-text">Sharma Mobiles</a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition">Home</a>
+            <a href="emi.html" class="hover:text-black transition">EMI Options</a>
+            <a href="https://wa.me/918348554018" class="px-6 py-2 gemini-gradient text-white rounded-full text-xs shadow-lg hover:opacity-90 transition">Contact Us</a>
+        </div>
+    </nav>
+
+    <section id="repair" class="max-w-7xl mx-auto py-20 px-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <div>
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 block">Certified Technicians</span>
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Expert <span class="text-blue-600">Repairs.</span></h2>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="slideRepair(-1)" class="nav-btn border border-gray-100">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button onclick="slideRepair(1)" class="nav-btn border border-gray-100">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="repair-track" class="flex gap-6 overflow-x-auto no-scrollbar snap-inline pb-10">
+            <div class="snap-item w-[300px] md:w-[350px] bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M6 7h12a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V9a2 2 0 012-2zM2 13h2m16 0h2"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Battery Repair</h3>
+                <p class="text-gray-500 text-sm mb-6">Original high-capacity batteries with 6 months warranty.</p>
+                <div class="text-2xl font-black text-gray-900">₹499<span class="text-xs text-gray-400 font-normal"> onwards</span></div>
+                <button onclick="bookService('Battery Repair')" class="mt-6 block w-full text-center py-3 bg-gray-50 rounded-xl font-bold text-sm group-hover:bg-blue-600 group-hover:text-white transition">Book Repair</button>
+            </div>
+
+            <div class="snap-item w-[300px] md:w-[350px] bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Display Replace</h3>
+                <p class="text-gray-500 text-sm mb-6">Premium quality OLED & LCD combos for all major brands.</p>
+                <div class="text-2xl font-black text-gray-900">₹999<span class="text-xs text-gray-400 font-normal"> onwards</span></div>
+                <button onclick="bookService('Display Replacement')" class="mt-6 block w-full text-center py-3 bg-gray-50 rounded-xl font-bold text-sm group-hover:bg-blue-600 group-hover:text-white transition">Book Repair</button>
+            </div>
+
+            <div class="snap-item w-[300px] md:w-[350px] bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Charging Port</h3>
+                <p class="text-gray-500 text-sm mb-6">Mic & Charging jack repair within 60 minutes.</p>
+                <div class="text-2xl font-black text-gray-900">₹299<span class="text-xs text-gray-400 font-normal"> onwards</span></div>
+                <button onclick="bookService('Charging Port Fix')" class="mt-6 block w-full text-center py-3 bg-gray-50 rounded-xl font-bold text-sm group-hover:bg-blue-600 group-hover:text-white transition">Book Repair</button>
+            </div>
+
+            <div class="snap-item w-[300px] md:w-[350px] bg-white border border-gray-100 p-8 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition">
+                    <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Software Fix</h3>
+                <p class="text-gray-500 text-sm mb-6">Logo stuck, FRP unlock, and system updates.</p>
+                <div class="text-2xl font-black text-gray-900">₹199<span class="text-xs text-gray-400 font-normal"> onwards</span></div>
+                <button onclick="bookService('Software Support')" class="mt-6 block w-full text-center py-3 bg-gray-50 rounded-xl font-bold text-sm group-hover:bg-blue-600 group-hover:text-white transition">Book Repair</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="acc-store" class="bg-white py-24 px-8 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-2 block">The Experience Centre</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Premium Accessories & Repair <br>in Hasimara</h2>
+            <p class="text-gray-500">Upgrade your lifestyle with 100% genuine products.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div onclick="bookService('TWS Audio')" class="service-card group cursor-pointer">
+                <div class="aspect-square bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center p-6 overflow-hidden">
+                    <img src="images/earphones.jpg" loading="lazy" alt="Audio" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="font-bold text-lg">TWS & Neckbands</h4>
+                <p class="text-sm text-gray-400">Boat, Realme & Sony</p>
+            </div>
+            <div onclick="bookService('Chargers')" class="service-card group cursor-pointer">
+                <div class="aspect-square bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center p-6 overflow-hidden">
+                    <img src="images/fast charger.jpg" loading="lazy" alt="Charger" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Fast Chargers</h4>
+                <p class="text-sm text-gray-400">Original Adapters</p>
+            </div>
+            <div onclick="bookService('Premium Cases')" class="service-card group cursor-pointer">
+                <div class="aspect-square bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center p-6 overflow-hidden">
+                    <img src="images/phone case.jpg" loading="lazy" alt="Cases" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Designer Cases</h4>
+                <p class="text-sm text-gray-400">Premium Builds</p>
+            </div>
+            <div onclick="bookService('Smartwatches')" class="service-card group cursor-pointer">
+                <div class="aspect-square bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center p-6 overflow-hidden">
+                    <img src="images/smart watches.webp" loading="lazy" alt="Watches" class="w-full h-full object-cover rounded-2xl group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Smartwatches</h4>
+                <p class="text-sm text-gray-400">Fitness & Calling</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-blue-600 py-6 overflow-hidden border-y border-blue-700">
+        <div class="animate-scroll">
+            <div class="flex gap-20 items-center px-10 text-white font-bold uppercase tracking-[0.2em] text-[10px]">
+                <span>Easy EMI Available</span>
+                <span>•</span>
+                <span>Bajaj Finserv Approved Partner</span>
+                <span>•</span>
+                <span>Low Down Payment Options</span>
+                <span>•</span>
+                <span>TVS Credit Available</span>
+                <span>•</span>
+                <span>HDB Financial Services</span>
+                <span>•</span>
+            </div>
+            <div class="flex gap-20 items-center px-10 text-white font-bold uppercase tracking-[0.2em] text-[10px]">
+                <span>Easy EMI Available</span>
+                <span>•</span>
+                <span>Bajaj Finserv Approved Partner</span>
+                <span>•</span>
+                <span>Low Down Payment Options</span>
+                <span>•</span>
+                <span>TVS Credit Available</span>
+                <span>•</span>
+                <span>HDB Financial Services</span>
+                <span>•</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-950 text-gray-300 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div class="text-xl font-bold mb-6 brand-gradient">
+              Sharma Mobiles
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Authorized Samsung retailer in Hasimara offering premium
+              smartphones and reliable repair services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Brands
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="samsung.html" class="hover:text-white"
+                  >Samsung Galaxy</a
+                >
+              </li>
+              <li><a href="iphone.html" class="hover:text-white">iPhone</a></li>
+              <li>
+                <a href="vivo-oppo.html" class="hover:text-white"
+                  >Vivo / Oppo</a
+                >
+              </li>
+              <li>
+                <a href="moto-oneplus.html" class="hover:text-white"
+                  >Moto / OnePlus</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Contact
+            </h4>
+            <div class="space-y-3 text-sm text-gray-400">
+              <p>Old Hasimara, opposite Bus Stand<br />Alipurduar - 735215</p>
+              <p>+91 9933558654</p>
+              <p>+91 8348554018</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Store Hours
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex justify-between">
+                <span>Mon - Sat</span><span>9 AM - 8 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span><span>9 AM - 9 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500"
+        >
+          © 2026 Sharma Mobiles. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        function slideRepair(direction) {
+            const track = document.getElementById('repair-track');
+            const cardWidth = track.querySelector('.snap-item').offsetWidth;
+            const gap = 24; 
+            track.scrollBy({
+                left: (cardWidth + gap) * direction,
+                behavior: 'smooth'
+            });
+        }
+
+        function bookService(item) {
+            const phone = "918348554018";
+            const message = encodeURIComponent(`Hi Sharma Mobiles! I'm looking for ${item}. Can you share the pricing and availability with me?`);
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

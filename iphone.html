@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Collection | Sharma Mobiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; scroll-behavior: smooth; }
+        
+        .gemini-text {
+            background: linear-gradient(90deg, #4285F4 0%, #9b72cb 50%, #d96570 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gemini-gradient { background: linear-gradient(135deg, #444746 0%, #1e1e1e 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        
+        .iphone-card { transition: all 0.4s ease; cursor: pointer; }
+        .iphone-card:hover { transform: translateY(-5px); }
+
+        /* Slider Styles */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .snap-inline { scroll-snap-type: x mandatory; }
+        .snap-item { scroll-snap-align: start; flex-shrink: 0; width: 100%; height: 100%; object-fit: contain; padding: 2.5rem; }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 30;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .iphone-card:hover .nav-btn { opacity: 1; }
+        .nav-btn:hover { background: white; scale: 1.1; }
+
+        .trust-icon { transition: all 0.3s ease; }
+        .trust-card:hover .trust-icon { transform: scale(1.1); color: #4285F4; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 glass-card py-4 px-8 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase gemini-text">Sharma Mobiles</a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+            <a href="index.html" class="hover:text-black transition">Home</a>
+            <a href="emi.html" class="hover:text-black transition">EMI Options</a>
+            <a href="https://wa.me/918348554018?text=I+want+to+check+my+iPhone+EMI+eligibility" class="px-6 py-2 gemini-gradient text-white rounded-full text-xs shadow-lg hover:opacity-90 transition">Check Eligibility</a>
+        </div>
+    </nav>
+
+    <header class="py-24 px-8 text-center bg-white">
+        <span class="text-[10px] font-bold tracking-[0.3em] text-gray-400 uppercase mb-4 block">Apple Intelligence is here</span>
+        <h1 class="text-4xl md:text-6xl font-semibold tracking-tight mb-4">iPhone. <span class="text-gray-400">Forged in titanium.</span></h1>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed italic">
+            "The ultimate iPhone experience, now within reach in Hasimara."
+        </p>
+        <p class="text-gray-400 text-sm mt-4 font-medium uppercase tracking-widest">Bajaj Finserv | HDB | TVS | Chola</p>
+    </header>
+
+    <section id="iphone-store" class="max-w-7xl mx-auto py-12 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div class="iphone-card group" onclick="sendWhatsApp('iPhone 17 Pro Max')">
+                <div class="relative aspect-[4/5] bg-gray-100 rounded-[2.5rem] mb-6 overflow-hidden">
+                    <button onclick="event.stopPropagation(); slide(this, -1)" class="nav-btn left-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="event.stopPropagation(); slide(this, 1)" class="nav-btn right-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <div class="img-track flex h-full overflow-x-auto snap-inline no-scrollbar">
+                        <img src="images/IPHONE 17 PRO BACK.jpg" class="snap-item" alt="iPhone 17 Pro Max Front">
+                        <img src="images/IPHONE 17 FRONT.jpg" class="snap-item" alt="iPhone 17 Pro Max Back">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">New Arrival</span>
+                    <h3 class="text-2xl font-semibold mt-1">iPhone 17 Pro Max</h3>
+                    <p class="text-gray-500 text-sm mt-2">Grade 5 Titanium • Action Button • AI Ready</p>
+                    <p class="mt-4 font-bold text-lg text-gray-800">EMI starts at ₹6,499/mo*</p>
+                    <button class="inline-block mt-4 text-sm font-bold border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600 transition">View Offers →</button>
+                </div>
+            </div>
+
+            <div class="iphone-card group" onclick="sendWhatsApp('iPhone Air')">
+                <div class="relative aspect-[4/5] bg-gray-100 rounded-[2.5rem] mb-6 overflow-hidden">
+                    <button onclick="event.stopPropagation(); slide(this, -1)" class="nav-btn left-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="event.stopPropagation(); slide(this, 1)" class="nav-btn right-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <div class="img-track flex h-full overflow-x-auto snap-inline no-scrollbar">
+                        <img src="images/PHONE AIR 01.jpg" class="snap-item" alt="iPhone Air Front">
+                        <img src="images/IPHONE AIR 02.jpg" class="snap-item" alt="iPhone Air Back">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">In Stock</span>
+                    <h3 class="text-2xl font-semibold mt-1">iPhone Air</h3>
+                    <p class="text-gray-500 text-sm mt-2">Powerful A-series Chip • Ultra Thin Design</p>
+                    <p class="mt-4 font-bold text-lg text-gray-800">EMI starts at ₹4,199/mo*</p>
+                    <button class="inline-block mt-4 text-sm font-bold border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600 transition">View Offers →</button>
+                </div>
+            </div>
+
+            <div class="iphone-card group" onclick="sendWhatsApp('iPhone 15 Pro')">
+                <div class="relative aspect-[4/5] bg-gray-100 rounded-[2.5rem] mb-6 overflow-hidden">
+                    <button onclick="event.stopPropagation(); slide(this, -1)" class="nav-btn left-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="event.stopPropagation(); slide(this, 1)" class="nav-btn right-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <div class="img-track flex h-full overflow-x-auto snap-inline no-scrollbar">
+                        <img src="images/iphone 15 01.jpg" class="snap-item" alt="iPhone 15 Pro">
+                        <img src="images/iphone 15 02.jpg" class="snap-item" alt="iPhone 15 Colors">
+                    </div>
+                </div>
+                <div class="px-2">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Great Value</span>
+                    <h3 class="text-2xl font-semibold mt-1">iPhone 15 Pro</h3>
+                    <p class="text-gray-500 text-sm mt-2">Titanium Build • A17 Pro Chip</p>
+                    <p class="mt-4 font-bold text-lg text-gray-800">EMI starts at ₹5,200/mo*</p>
+                    <button class="inline-block mt-4 text-sm font-bold border-b-2 border-black pb-1 group-hover:text-blue-600 group-hover:border-blue-600 transition">View Offers →</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-24 px-8 border-t border-gray-100">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight">The Sharma Mobiles Advantage</h2>
+            <p class="text-gray-500 mt-2">Why wait for delivery when you can take it home today?</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="trust-card text-center">
+                <div class="trust-icon text-gray-900 mb-6 flex justify-center">
+                    <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                </div>
+                <h4 class="font-bold mb-2">Instant Data Transfer</h4>
+                <p class="text-sm text-gray-500">We help move your photos, contacts, and WhatsApp from your old phone for free.</p>
+            </div>
+            <div class="trust-card text-center">
+                <div class="trust-icon text-gray-900 mb-6 flex justify-center">
+                    <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4 class="font-bold mb-2">Spot Approval</h4>
+                <p class="text-sm text-gray-500">Walk in with your Aadhaar and PAN, walk out with an iPhone in 20 minutes.</p>
+            </div>
+            <div class="trust-card text-center">
+                <div class="trust-icon text-gray-900 mb-6 flex justify-center">
+                    <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                </div>
+                <h4 class="font-bold mb-2">Genuine Accessories</h4>
+                <p class="text-sm text-gray-500">100% original Apple cases, adapters, and MagSafe chargers available in-store.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-100 py-16 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-8 tracking-tight">Official Finance Partners</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="text-xl font-black text-blue-800 tracking-tighter">BAJAJ FINSERV</div>
+                <div class="text-xl font-black text-orange-600 tracking-tighter">HDB</div>
+                <div class="text-xl font-black text-red-600 tracking-tighter">TVS CREDIT</div>
+                <div class="text-xl font-black text-blue-900 tracking-tighter italic">CHOLA</div>
+            </div>
+            <p class="text-gray-400 text-[10px] mt-10 uppercase tracking-widest">*Instant approval with Aadhaar & PAN. Terms & Conditions apply.</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-300 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div class="text-xl font-bold mb-6 brand-gradient">
+              Sharma Mobiles
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Authorized Samsung retailer in Hasimara offering premium
+              smartphones and reliable repair services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Brands
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="samsung.html" class="hover:text-white"
+                  >Samsung Galaxy</a
+                >
+              </li>
+              <li><a href="iphone.html" class="hover:text-white">iPhone</a></li>
+              <li>
+                <a href="vivo-oppo.html" class="hover:text-white"
+                  >Vivo / Oppo</a
+                >
+              </li>
+              <li>
+                <a href="moto-oneplus.html" class="hover:text-white"
+                  >Moto / OnePlus</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Contact
+            </h4>
+            <div class="space-y-3 text-sm text-gray-400">
+              <p>Old Hasimara, opposite Bus Stand<br />Alipurduar - 735215</p>
+              <p>+91 9933558654</p>
+              <p>+91 8348554018</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Store Hours
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex justify-between">
+                <span>Mon - Sat</span><span>9 AM - 8 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span><span>9 AM - 9 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500"
+        >
+          © 2026 Sharma Mobiles. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        function slide(button, direction) {
+            const track = button.parentElement.querySelector('.img-track');
+            const scrollWidth = track.clientWidth;
+            track.scrollBy({
+                left: scrollWidth * direction,
+                behavior: 'smooth'
+            });
+        }
+
+        function sendWhatsApp(model) {
+            const phone = "918348554018";
+            const message = encodeURIComponent(`Hello Sharma Mobiles! I'm interested in buying the ${model}. Can you tell me the best cash price and EMI downpayment options available?`);
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

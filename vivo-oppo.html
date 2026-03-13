@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivo & Oppo | Sharma Mobiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; scroll-behavior: smooth; }
+        
+        .gemini-text {
+            background: linear-gradient(90deg, #4285F4 0%, #9b72cb 50%, #d96570 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid #eee; }
+        
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; position: relative; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); }
+        
+        /* Image Slider Specific Styles */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Ensure images stay in a row */
+        .img-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+        .snap-item { scroll-snap-align: start; flex-shrink: 0; width: 100%; height: 100%; object-fit: contain; }
+        
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px;
+            border-radius: 50%;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover .nav-btn { opacity: 1; }
+        .nav-btn:hover { background: white; transform: translateY(-50%) scale(1.1); }
+
+        .vivo-blue { color: #0033ff; }
+        .oppo-green { color: #00ad66; }
+        .bg-vivo { background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%); }
+        .bg-oppo { background: linear-gradient(180deg, #f0fff4 0%, #ffffff 100%); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 glass-nav py-4 px-8 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-bold tracking-tighter uppercase gemini-text">Sharma Mobiles</a>
+        <div class="space-x-8 text-sm font-medium">
+            <a href="index.html" class="text-gray-600 hover:text-black transition">Home</a>
+            <a href="emi.html" class="text-gray-600 hover:text-black transition">EMI Plans</a>
+        </div>
+    </nav>
+
+    <header class="py-24 px-8 text-center bg-white">
+        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-blue-500 mb-4 block">Camera & Style Specialists</span>
+        <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-4 text-gray-900">Innovation in <br><span class="font-semibold italic">Every Frame.</span></h1>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg mb-10">Capture life's best moments with Vivo's Zeiss optics and Oppo's AI Portrait expert engines.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#vivo-section" class="px-8 py-3 bg-blue-600 text-white rounded-2xl font-semibold shadow-lg hover:scale-105 transition-all">Explore Vivo</a>
+            <a href="#oppo-section" class="px-8 py-3 bg-green-600 text-white rounded-2xl font-semibold shadow-lg hover:scale-105 transition-all">Explore Oppo</a>
+        </div>
+    </header>
+
+    <section id="vivo-section" class="py-24 px-8 bg-vivo border-t border-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-16">
+                <h2 class="text-4xl font-bold vivo-blue tracking-tighter">Vivo</h2>
+                <div class="h-[1px] flex-grow bg-blue-200"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400">Professional Photography</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-blue-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <span class="absolute top-4 left-4 z-30 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Zeiss Lens</span>
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/vivo x300.webp" class="snap-item" alt="Vivo X300 Front">
+                            <img src="images/x 300.jpg" class="snap-item" alt="Vivo X300 Back">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Vivo X300 Series</h3>
+                    <p class="text-xs font-semibold text-blue-500 mb-6">200MP ZEISS APO Telephoto</p>
+                    <button class="whatsapp-btn w-full py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all">Order Online</button>
+                </div>
+
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-blue-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/v70.jpg" class="snap-item" alt="Vivo V70 Front">
+                            <img src="images/v70 02.jpg" class="snap-item" alt="Vivo V70 Back">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Vivo V70</h3>
+                    <p class="text-xs font-semibold text-blue-500 mb-6">Performance King</p>
+                    <button class="whatsapp-btn w-full py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all">Order Online</button>
+                </div>
+
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-blue-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/vivo y series.webp" class="snap-item" alt="Vivo Y Series">
+                            <img src="images/y series.jpg" class="snap-item" alt="Back View">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Vivo Y Series</h3>
+                    <p class="text-xs font-semibold text-blue-500 mb-6">Budget Premium</p>
+                    <button class="whatsapp-btn w-full py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all">Order Online</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="oppo-section" class="py-24 px-8 bg-oppo border-t border-green-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-16">
+                <h2 class="text-4xl font-bold oppo-green tracking-tighter">Oppo</h2>
+                <div class="h-[1px] flex-grow bg-green-200"></div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-green-400">Inspiration Ahead</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-green-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <span class="absolute top-4 left-4 z-30 bg-green-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">AI Expert</span>
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/Oppo Reno 15.webp" class="snap-item" alt="Oppo Reno 15">
+                            <img src="images/reno 15 02.jpg" class="snap-item" alt="Back View">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Oppo Reno 15</h3>
+                    <p class="text-xs font-semibold text-green-500 mb-6">AI Camera Specialist</p>
+                    <button class="whatsapp-btn w-full py-4 bg-green-50 text-green-600 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">Check Price</button>
+                </div>
+
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-green-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/Oppo F series.webp" class="snap-item" alt="Oppo F Series">
+                            <img src="images/oppo f 02.jpg" class="snap-item" alt="Back View">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Oppo F Series 5G</h3>
+                    <p class="text-xs font-semibold text-green-500 mb-6">India's Toughest Phone</p>
+                    <button class="whatsapp-btn w-full py-4 bg-green-50 text-green-600 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">Check Price</button>
+                </div>
+
+                <div class="product-card bg-white p-6 rounded-[2.5rem] border border-green-50 group">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                        <button onclick="slide(this, -1)" class="nav-btn left-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button onclick="slide(this, 1)" class="nav-btn right-3">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                        </button>
+                        <div class="img-track h-full no-scrollbar">
+                            <img src="images/oppo a.webp" class="snap-item" alt="Oppo A3 Pro">
+                            <img src="images/oppo a6 x.jpg" class="snap-item" alt="Back View">
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Oppo A Series</h3>
+                    <p class="text-xs font-semibold text-green-500 mb-6">Durable Powerhouse</p>
+                    <button class="whatsapp-btn w-full py-4 bg-green-50 text-green-600 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">Check Price</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-300 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div class="text-xl font-bold mb-6 brand-gradient">
+              Sharma Mobiles
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Authorized Samsung retailer in Hasimara offering premium
+              smartphones and reliable repair services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Brands
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="samsung.html" class="hover:text-white"
+                  >Samsung Galaxy</a
+                >
+              </li>
+              <li><a href="iphone.html" class="hover:text-white">iPhone</a></li>
+              <li>
+                <a href="vivo-oppo.html" class="hover:text-white"
+                  >Vivo / Oppo</a
+                >
+              </li>
+              <li>
+                <a href="moto-oneplus.html" class="hover:text-white"
+                  >Moto / OnePlus</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Contact
+            </h4>
+            <div class="space-y-3 text-sm text-gray-400">
+              <p>Old Hasimara, opposite Bus Stand<br />Alipurduar - 735215</p>
+              <p>+91 9933558654</p>
+              <p>+91 8348554018</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Store Hours
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex justify-between">
+                <span>Mon - Sat</span><span>9 AM - 8 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span><span>9 AM - 9 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500"
+        >
+          © 2026 Sharma Mobiles. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        // Image Slider logic
+        function slide(button, direction) {
+            const track = button.parentElement.querySelector('.img-track');
+            const item = track.querySelector('.snap-item');
+            if (item) {
+                const scrollAmount = item.offsetWidth;
+                track.scrollBy({
+                    left: scrollAmount * direction,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // WhatsApp Automation logic
+        document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const card = this.closest('.product-card');
+                const productName = card.querySelector('h3').innerText;
+                const phoneNumber = "918348554018";
+                
+                const message = encodeURIComponent(`Hello Sharma Mobiles! I'm interested in the ${productName}. Could you please share the current price and available Bajaj Finance / HDFC EMI options?`);
+                
+                window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            });
+        });
+    </script>
+
+</body>
+</html>

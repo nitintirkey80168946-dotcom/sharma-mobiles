@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realme & Redmi | Sharma Mobiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fafafa;
+        color: #1a1a1a;
+        scroll-behavior: smooth;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #eee;
+      }
+
+      .gemini-text {
+        background: linear-gradient(
+          90deg,
+          #4285f4 0%,
+          #9b72cb 50%,
+          #d96570 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .snap-inline {
+        scroll-snap-type: x mandatory;
+        display: flex;
+        overflow-x: auto;
+      }
+      .snap-item {
+        scroll-snap-align: start;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid #f0f0f0;
+      }
+      .product-card:hover {
+        transform: translateY(-8px);
+        border-color: #e5e5e5;
+        box-shadow: 0 25px 30px -10px rgba(0, 0, 0, 0.05);
+      }
+
+      .bg-realme {
+        background: linear-gradient(135deg, #fffcf0 0%, #ffffff 100%);
+      }
+      .bg-redmi {
+        background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <nav
+      class="sticky top-0 z-50 glass-nav py-4 px-8 flex justify-between items-center"
+    >
+      <a
+        href="index.html"
+        class="text-xl font-bold tracking-tighter uppercase gemini-text"
+        >Sharma Mobiles</a
+      >
+      <div class="flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="text-gray-600 hover:text-black transition"
+          >Home</a
+        >
+        <a href="emi.html" class="text-gray-600 hover:text-black transition"
+          >EMI Plans</a
+        >
+      </div>
+    </nav>
+
+    <header class="py-20 px-8 text-center bg-white border-b border-gray-50">
+      <span
+        class="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-4 block"
+        >Official Retailer</span
+      >
+      <h1 class="text-4xl md:text-6xl font-light tracking-tight mb-4">
+        Value Meets <br /><span class="font-semibold">Innovation.</span>
+      </h1>
+      <p class="text-gray-500 max-w-2xl mx-auto text-lg mb-8">
+        Cutting-edge technology that fits your budget.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="#realme"
+          class="px-8 py-3 bg-yellow-400 text-black rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all"
+          >Realme Hub</a
+        >
+        <a
+          href="#redmi"
+          class="px-8 py-3 bg-red-600 text-white rounded-2xl font-bold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all"
+          >Redmi Hub</a
+        >
+      </div>
+    </header>
+
+    <section id="realme" class="py-24 px-8 bg-realme">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-6 mb-16">
+          <h2 class="text-4xl font-black uppercase tracking-tighter italic">
+            Realme
+          </h2>
+          <div class="h-[1px] flex-grow bg-yellow-200"></div>
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest bg-black text-white px-4 py-1.5 rounded-full"
+            >Dare to Leap</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/realme gt.webp"
+                  class="snap-item"
+                  alt="GT Front"
+                />
+                <img
+                  src="images/realme gt 02.jpg"
+                  class="snap-item"
+                  alt="GT Back"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Realme GT Series</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                Flagship Killer Performance featuring Snapdragon 8 Gen 3.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-yellow-400 hover:text-black transition-colors duration-300"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/realme 13 pro +.jpg"
+                  class="snap-item"
+                  alt="13 Pro Front"
+                />
+                <img
+                  src="images/realme 13 pro.jpg"
+                  class="snap-item"
+                  alt="13 Pro Side"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Realme 13 Pro+</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                Ultra Clear Camera with Sony LYT-701 sensor.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-yellow-400 hover:text-black transition-colors duration-300"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/p series.jpg"
+                  class="snap-item"
+                  alt="P Series 1"
+                />
+                <img
+                  src="images/realme p 02.jpg"
+                  class="snap-item"
+                  alt="P Series 2"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Realme P-Series</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                The Power-Segment Leader designed for heavy gaming.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-yellow-400 hover:text-black transition-colors duration-300"
+                >Order Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="redmi" class="py-24 px-8 bg-redmi">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-6 mb-16">
+          <h2 class="text-4xl font-black uppercase tracking-tighter">Redmi</h2>
+          <div class="h-[1px] flex-grow bg-red-200"></div>
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest bg-red-600 text-white px-4 py-1.5 rounded-full"
+            >by Xiaomi</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/redmi note 15 pro.jpg"
+                  class="snap-item"
+                  alt="Note 15 Front"
+                />
+                <img
+                  src="images/redmi note 15 pro back.jpg"
+                  class="snap-item"
+                  alt="Note 15 Back"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Redmi Note 15 Pro</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                200MP Ultra-clear camera with OIS and curved display.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/redmi 15 c.jpg"
+                  class="snap-item"
+                  alt="Redmi 15c 1"
+                />
+                <img
+                  src="images/redmi 15c back.jpg"
+                  class="snap-item"
+                  alt="Redmi 15c 2"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Redmi 15c 5G</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                The ultimate budget 5G experience with glass back.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card bg-white p-6 rounded-[2.5rem] group">
+            <div
+              class="relative aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50"
+            >
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: -300, behavior: 'smooth' })
+                "
+                class="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <div class="img-track snap-inline no-scrollbar h-full">
+                <img
+                  src="images/redmi note 14 pro.jpg"
+                  class="snap-item"
+                  alt="Redmi Note 14 Front"
+                />
+                <img
+                  src="images/redmi note 14 pro back.jpg"
+                  class="snap-item"
+                  alt="Redmi Note 14 Lens"
+                />
+              </div>
+              <button
+                onclick="
+                  this.parentElement
+                    .querySelector('.img-track')
+                    .scrollBy({ left: 300, behavior: 'smooth' })
+                "
+                class="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/90 p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+            <div class="px-2">
+              <h3 class="text-xl font-bold mb-1">Redmi Note 14 Series</h3>
+              <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                Professional performance for true mobile photography.
+              </p>
+              <a
+                href="order.html"
+                class="whatsapp-btn block text-center py-4 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 transition-all"
+                >Order Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-300 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div class="text-xl font-bold mb-6 brand-gradient">
+              Sharma Mobiles
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Authorized Samsung retailer in Hasimara offering premium
+              smartphones and reliable repair services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Brands
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="samsung.html" class="hover:text-white"
+                  >Samsung Galaxy</a
+                >
+              </li>
+              <li><a href="iphone.html" class="hover:text-white">iPhone</a></li>
+              <li>
+                <a href="vivo-oppo.html" class="hover:text-white"
+                  >Vivo / Oppo</a
+                >
+              </li>
+              <li>
+                <a href="moto-oneplus.html" class="hover:text-white"
+                  >Moto / OnePlus</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Contact
+            </h4>
+            <div class="space-y-3 text-sm text-gray-400">
+              <p>Old Hasimara, opposite Bus Stand<br />Alipurduar - 735215</p>
+              <p>+91 9933558654</p>
+              <p>+91 8348554018</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Store Hours
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex justify-between">
+                <span>Mon - Sat</span><span>9 AM - 8 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span><span>9 AM - 9 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500"
+        >
+          © 2026 Sharma Mobiles. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".whatsapp-btn").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const card = this.closest(".product-card");
+          const productName = card
+            ? card.querySelector("h3").innerText
+            : "a mobile phone";
+          const phoneNumber = "918348554018";
+          const message = encodeURIComponent(
+            `Hello Sharma Mobiles! I'm interested in the ${productName}. Is it available at your store?`,
+          );
+          window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        });
+      });
+    </script>
+  </body>
+</html>

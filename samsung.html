@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy | Sharma Mobiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #000; scroll-behavior: smooth; }
+        
+        .samsung-text {
+            background: linear-gradient(90deg, #1428a0 0%, #2b59ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid #eee; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Fixed Carousel Container */
+        .img-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 100%; }
+        .snap-item { scroll-snap-align: start; flex-shrink: 0; width: 100%; height: 100%; object-fit: contain; }
+        
+        .product-card { transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
+        .product-card:hover { transform: translateY(-8px); }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 20;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover .nav-btn { opacity: 1; }
+        .nav-btn:hover { transform: translateY(-50%) scale(1.1); }
+        
+        .badge-samsung { background: #1428a0; color: white; padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 glass-nav py-4 px-8 flex justify-between items-center">
+        <a href="index.html" class="text-xl font-extrabold tracking-tighter uppercase samsung-text">Sharma Mobiles</a>
+        <div class="space-x-8 text-sm font-semibold text-gray-600">
+            <a href="index.html" class="hover:text-black transition">Home</a>
+            <a href="emi.html" class="hover:text-black transition">Samsung Finance+</a>
+        </div>
+    </nav>
+
+    <header class="py-24 px-8 text-center bg-white overflow-hidden relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
+            <h1 class="text-[20vw] font-black uppercase leading-none">Galaxy</h1>
+        </div>
+        <span class="badge-samsung mb-6 inline-block">Authorized Experience Partner</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">Epic Starts Here.</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto text-lg mb-10">Discover Galaxy AI, Ultra Cameras, and the most vibrant displays in the world. Available at 0% Interest via Samsung Finance+.</p>
+        <div class="flex justify-center gap-6 relative z-10">
+            <a href="#ultra" class="px-8 py-4 bg-black text-white rounded-full font-bold hover:scale-105 transition shadow-lg">Galaxy S Series</a>
+            <a href="#series-a" class="px-8 py-4 border-2 border-black rounded-full font-bold hover:bg-black hover:text-white transition">Galaxy A Series</a>
+        </div>
+    </header>
+
+    <section id="ultra" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-12 border-b-2 border-gray-100 pb-6">
+            <div>
+                <h2 class="text-4xl font-extrabold tracking-tighter">Galaxy S Series</h2>
+                <p class="text-gray-400 mt-2 font-medium">The Ultimate AI Phone</p>
+            </div>
+            <div class="badge-samsung mb-2">Galaxy AI Enabled</div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="product-card bg-white p-6 rounded-[3rem] border border-gray-100 shadow-sm relative group">
+                <div class="aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                    <button onclick="slide(this, -1)" class="nav-btn left-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="slide(this, 1)" class="nav-btn right-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="img-track no-scrollbar">
+                        <img src="images/galaxy s26.png" class="snap-item" alt="Galaxy S26">
+                        <img src="images/in-galaxy s26 back.png" class="snap-item" alt="Side View">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Galaxy S26</h3>
+                <p class="text-xs font-bold text-blue-700 mb-4 uppercase tracking-widest">Armor Aluminum Frame • 50MP Telephoto Camera</p>
+                <div class="flex items-center justify-between mt-6">
+                    <div>
+                        <span class="text-gray-400 text-xs block">EMI starts from</span>
+                        <span class="text-lg font-bold">₹4,225/mon</span>
+                    </div>
+                    <a href="order.html" class="order-btn px-6 py-3 bg-blue-600 text-white rounded-2xl font-bold text-sm shadow-md">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="product-card bg-white p-6 rounded-[3rem] border border-gray-100 shadow-sm relative group">
+                <div class="aspect-square rounded-[2rem] overflow-hidden mb-6 bg-gray-50 relative">
+                    <button onclick="slide(this, -1)" class="nav-btn left-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="slide(this, 1)" class="nav-btn right-4">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="img-track no-scrollbar">
+                        <img src="images/galaxy s26.png+ front.png" class="snap-item" alt="Galaxy S26+">
+                        <img src="images/galaxy s26+ back.png" class="snap-item" alt="Back View">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Galaxy S26+</h3>
+                <p class="text-xs font-bold text-blue-700 mb-4 uppercase tracking-widest">200MP AI Camera+ QHD+Display</p>
+                <div class="flex items-center justify-between mt-6">
+                    <div>
+                        <span class="text-gray-400 text-xs block">EMI starts at</span>
+                        <span class="text-lg font-bold">₹10,486/mon</span>
+                    </div>
+                    <a href="order.html" class="order-btn px-6 py-3 bg-blue-600 text-white rounded-2xl font-bold text-sm shadow-md">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="product-card bg-black p-6 rounded-[3rem] text-white relative group">
+                <div class="aspect-square rounded-[2rem] overflow-hidden mb-6 bg-zinc-900 relative">
+                    <button onclick="slide(this, -1)" class="nav-btn left-4 text-black">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button onclick="slide(this, 1)" class="nav-btn right-4 text-black">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="img-track no-scrollbar">
+                        <img src="images/galaxy-z-fold7-front image.jpg" class="snap-item" alt="Galaxy Z Fold7">
+                        <img src="images/galaxy-z-fold7-features-google-ai-pro.jpg" class="snap-item" alt="Open View">
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Galaxy Z Fold7</h3>
+                <p class="text-xs font-bold text-blue-400 mb-4 uppercase tracking-widest">Unfold Your World</p>
+                <div class="flex items-center justify-between mt-6">
+                    <div>
+                        <span class="text-white/60 text-xs block">EMI starts from</span>
+                        <span class="text-lg font-bold">₹9,568/mon</span>
+                    </div>
+                    <a href="order.html" class="order-btn px-6 py-3 bg-white text-black rounded-2xl font-bold text-sm">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="series-a" class="py-20 bg-gray-100 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-10">Awesome Galaxy A Series</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded-3xl shadow-sm product-card">
+                    <img src="images/samsung a 07.jpg" class="w-full h-48 object-contain mb-4" alt="Galaxy A07 5G">
+                    <h3 class="font-bold">Galaxy A07 5G</h3>
+                    <p class="text-xs text-gray-500 mb-4">50 MP • Dual Camera</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-blue-700 font-bold">₹16,999*</p>
+                        <a href="order.html" class="order-btn text-blue-600 font-bold text-xs uppercase tracking-tighter">Details ></a>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-sm product-card">
+                    <img src="images/samsung a36.webp" class="w-full h-48 object-contain mb-4" alt="Galaxy A36 5G">
+                    <h3 class="font-bold">Galaxy A36 5G</h3>
+                    <p class="text-xs text-gray-500 mb-4">Snapdragon processor</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-blue-700 font-bold">₹32,499*</p>
+                        <a href="order.html" class="order-btn text-blue-600 font-bold text-xs uppercase tracking-tighter">Details ></a>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-sm product-card">
+                    <img src="images/samsung a17.jpg" class="w-full h-48 object-contain mb-4" alt="Galaxy A17 5G">
+                    <h3 class="font-bold">Galaxy A17 5G</h3>
+                    <p class="text-xs text-gray-500 mb-4">AI Assist</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-blue-700 font-bold">₹19,499*</p>
+                        <a href="order.html" class="order-btn text-blue-600 font-bold text-xs uppercase tracking-tighter">Details ></a>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-sm product-card">
+                    <img src="images/samsung a 56.jpg" class="w-full h-48 object-contain mb-4" alt="Galaxy A56 5G">
+                    <h3 class="font-bold">Galaxy A56 5G</h3>
+                    <p class="text-xs text-gray-500 mb-4">Awesome Intelligence</p>
+                    <div class="flex justify-between items-center">
+                        <p class="text-blue-700 font-bold">₹43,999*</p>
+                        <a href="order.html" class="order-btn text-blue-600 font-bold text-xs uppercase tracking-tighter">Details ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-8 bg-black text-white text-center">
+        <div class="max-w-3xl mx-auto">
+            <img src="images/Samsung-Logo.png" class="h-8 mx-auto mb-8" alt="Samsung">
+            <h2 class="text-3xl font-bold mb-6">Samsung Finance+</h2>
+            <p class="text-zinc-400 mb-10 text-lg">No Credit Card? No Problem. Get instant approval with just your Aadhar Card at our Old Hasimara store. 0% Downpayment available on select models.</p>
+            <a href="https://wa.me/918348554018?text=Hello+Sharma+Mobiles!+I+want+to+apply+for+Samsung+Finance+Plus." class="bg-blue-600 text-white px-12 py-4 rounded-full font-bold shadow-2xl hover:bg-blue-700 transition">Get Approval on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 text-gray-300 pt-20 pb-10 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div>
+            <div class="text-xl font-bold mb-6 brand-gradient">
+              Sharma Mobiles
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              Authorized Samsung retailer in Hasimara offering premium
+              smartphones and reliable repair services.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Brands
+            </h4>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="samsung.html" class="hover:text-white"
+                  >Samsung Galaxy</a
+                >
+              </li>
+              <li><a href="iphone.html" class="hover:text-white">iPhone</a></li>
+              <li>
+                <a href="vivo-oppo.html" class="hover:text-white"
+                  >Vivo / Oppo</a
+                >
+              </li>
+              <li>
+                <a href="moto-oneplus.html" class="hover:text-white"
+                  >Moto / OnePlus</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Contact
+            </h4>
+            <div class="space-y-3 text-sm text-gray-400">
+              <p>Old Hasimara, opposite Bus Stand<br />Alipurduar - 735215</p>
+              <p>+91 9933558654</p>
+              <p>+91 8348554018</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-sm mb-5 uppercase tracking-wider">
+              Store Hours
+            </h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li class="flex justify-between">
+                <span>Mon - Sat</span><span>9 AM - 8 PM</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span><span>9 AM - 9 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-xs text-gray-500"
+        >
+          © 2026 Sharma Mobiles. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+        function slide(button, direction) {
+            const track = button.parentElement.querySelector('.img-track');
+            const item = track.querySelector('.snap-item');
+            if (item) {
+                // Moving by exactly the width of one image
+                const scrollWidth = item.offsetWidth;
+                track.scrollBy({
+                    left: scrollWidth * direction,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.product-card');
+                const productName = card.querySelector('h3').innerText;
+                const phoneNumber = "918348554018";
+                const message = encodeURIComponent(`Hello Sharma Mobiles! I am interested in the ${productName}. Could you please share the best cash price and Samsung Finance EMI details for this model?`);
+                window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
